@@ -8,6 +8,8 @@ namespace Dell.Academy.Atividade.Application.Interfaces
     {
         Task<List<Funcionario>> GetAllAsync();
 
+        Task<Funcionario> GetByCpfAsync(string cpf);
+
         Task<Funcionario> GetByIdAsync(long id);
 
         Task<bool> InsertAsync(Funcionario entity);
@@ -15,7 +17,5 @@ namespace Dell.Academy.Atividade.Application.Interfaces
         Task<bool> UpdateAsync(Funcionario entity);
 
         Task<bool> DeleteAsync(long id);
-
-        Task<bool> SaveChangesAsync();
     }
 }

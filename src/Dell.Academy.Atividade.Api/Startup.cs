@@ -21,6 +21,7 @@ namespace Dell.Academy.Atividade.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDatabaseConfig(Configuration);
+            services.AddAutoMapperConfiguration();
             services.AddControllers();
             services.AddSwaggerConfig();
         }
