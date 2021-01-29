@@ -4,7 +4,6 @@ using Dell.Academy.Atividade.Application.Interfaces;
 using Dell.Academy.Atividade.Application.Models;
 using Dell.Academy.Atividade.Application.Models.Validations;
 using Dell.Academy.Atividade.Application.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -55,19 +54,40 @@ namespace Dell.Academy.Atividade.Application.Services
             return Commit(await _funcionarioRepositorio.InsertAsync(funcionario));
         }
 
-        public Task<ErrorViewModel> UpdateEnderecoAsync(EnderecoViewModel viewModel)
+        public async Task<ErrorViewModel> UpdateEnderecoAsync(EnderecoViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var endereco = _mapper.Map<Endereco>(viewModel);
+            if (!EntityIsValid(new EnderecoValidator(), endereco))
+                return ValidationErrors();
+
+            if (await _enderecoRepositorio.GetByIdAsync(viewModel.Id) is null)
+                return Error(ErrorMessages.EnderecoExistsError(viewModel.Id));
+
+            return Commit(await _enderecoRepositorio.UpdateAsync(endereco));
         }
 
-        public Task<ErrorViewModel> UpdateFuncionarioAsync(FuncionarioViewModel viewModel)
+        public async Task<ErrorViewModel> UpdateFuncionarioAsync(FuncionarioViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var funcionario = _mapper.Map<Funcionario>(viewModel);
+            if (!EntityIsValid(new FuncionarioValidator(), funcionario)
+                || !EntityIsValid(new EnderecoValidator(), funcionario.Endereco))
+                return ValidationErrors();
+
+            if (await _funcionarioRepositorio.GetByIdAsync(viewModel.Id) is null)
+                return Error(ErrorMessages.FuncionarioIdExistsError(viewModel.Id));
+
+            if (!(await GetFuncionario(viewModel.Cpf) is null))
+                return Error(ErrorMessages.FuncionarioExistsError(viewModel.Cpf));
+
+            return Commit(await _funcionarioRepositorio.UpdateAsync(funcionario));
         }
 
-        public Task<ErrorViewModel> DeleteFuncionarioAsync(long id)
+        public async Task<ErrorViewModel> DeleteFuncionarioAsync(long id)
         {
-            throw new NotImplementedException();
+            if (await _funcionarioRepositorio.GetByIdAsync(id) is null)
+                return Error(ErrorMessages.FuncionarioIdExistsError(id));
+
+            return Commit(await _funcionarioRepositorio.DeleteAsync(id));
         }
 
         private async Task<Funcionario> GetFuncionario(string cpf)

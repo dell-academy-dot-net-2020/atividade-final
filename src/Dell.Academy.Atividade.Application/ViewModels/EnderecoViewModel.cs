@@ -9,6 +9,6 @@
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-        public long FornecedorId { get; set; }
+        public long FuncionarioId { get; set; }
     }
 }

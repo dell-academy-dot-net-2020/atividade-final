@@ -10,6 +10,7 @@ namespace Dell.Academy.Atividade.Api.Configurations
         public static void AddDependenceInjectionConfig(this IServiceCollection services)
         {
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
+            services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
             services.AddScoped<IFuncionarioService, FuncionarioService>();
         }
     }

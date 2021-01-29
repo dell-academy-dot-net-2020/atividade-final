@@ -9,10 +9,10 @@ namespace Dell.Academy.Atividade.Api.Configurations
         public static void AddSwaggerConfig(this IServiceCollection services)
             => services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("Atividade final Dell Academy",
+                c.SwaggerDoc("v1",
                 new OpenApiInfo
                 {
-                    Title = "Dell.Academy.Atividade.Api",
+                    Title = "Atividade final Dell Academy",
                     Version = "v1"
                 });
             });
@@ -20,7 +20,11 @@ namespace Dell.Academy.Atividade.Api.Configurations
         public static void UseSwaggerConfig(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dell.Academy.Atividade.Api v1"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dell.Academy.Atividade.Api v1");
+                c.RoutePrefix = string.Empty;
+            });
         }
     }
 }

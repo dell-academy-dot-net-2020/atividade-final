@@ -11,7 +11,8 @@ namespace Dell.Academy.Atividade.Data.Repositories
         {
         }
 
-        public async Task<bool> UpdateAsync(Endereco entity)
-            => await UpdateAsync<Endereco>(entity);
+        public async Task<Endereco> GetByIdAsync(long id) => await GetByIdAsync<Endereco>(id);
+
+        public async Task<bool> UpdateAsync(Endereco entity) => await UpdateAsync<Endereco>(entity);
     }
 }

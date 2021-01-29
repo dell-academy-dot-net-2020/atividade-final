@@ -1,4 +1,6 @@
-﻿namespace Dell.Academy.Atividade.Application.Models
+﻿using Dell.Academy.Atividade.Application.Models.Validations;
+
+namespace Dell.Academy.Atividade.Application.Models
 {
     public class Endereco : EntidadeBase
     {
@@ -20,7 +22,7 @@
             Rua = rua;
             Numero = numero;
             Bairro = bairro;
-            Cep = cep;
+            Cep = CpfValidator.OnlyNumbers(cep);
             Cidade = cidade;
             Estado = estado;
             FuncionarioId = funcionarioId;

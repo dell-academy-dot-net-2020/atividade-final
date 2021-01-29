@@ -1,4 +1,5 @@
 ﻿using Dell.Academy.Atividade.Application.Models.Enums;
+using Dell.Academy.Atividade.Application.Models.Validations;
 using System;
 
 namespace Dell.Academy.Atividade.Application.Models
@@ -19,7 +20,7 @@ namespace Dell.Academy.Atividade.Application.Models
         {
             NomeCompleto = nomeCompleto;
             DataNascimento = dataNascimento;
-            Cpf = cpf;
+            Cpf = CpfValidator.OnlyNumbers(cpf);
             Sexo = sexo;
             Endereco = endereco;
         }

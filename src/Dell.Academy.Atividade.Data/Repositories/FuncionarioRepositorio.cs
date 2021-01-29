@@ -15,13 +15,12 @@ namespace Dell.Academy.Atividade.Data.Repositories
         }
 
         public async Task<Funcionario> GetByCpfAsync(string cpf)
-            => await Context.Funcionarios.AsNoTracking().FirstOrDefaultAsync(f => f.Cpf == cpf);
+            => await Context.Funcionarios.AsNoTracking().Include(f => f.Endereco).FirstOrDefaultAsync(f => f.Cpf == cpf);
 
         public async Task<List<Funcionario>> GetAllAsync()
-            => await Context.Funcionarios.AsNoTracking().OrderBy(f => f.NomeCompleto).ToListAsync();
+            => await Context.Funcionarios.AsNoTracking().Include(f => f.Endereco).OrderBy(f => f.NomeCompleto).ToListAsync();
 
-        public async Task<Funcionario> GetByIdAsync(long id)
-            => await Context.Funcionarios.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+        public async Task<Funcionario> GetByIdAsync(long id) => await GetByIdAsync<Funcionario>(id);
 
         public async Task<bool> InsertAsync(Funcionario entity)
         {
