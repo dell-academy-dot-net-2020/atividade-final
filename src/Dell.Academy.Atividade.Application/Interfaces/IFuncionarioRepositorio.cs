@@ -16,6 +16,6 @@ namespace Dell.Academy.Atividade.Application.Interfaces
 
         Task<bool> UpdateAsync(Funcionario entity);
 
-        Task<bool> DeleteAsync(long id);
+        Task<bool> DeleteAsync(Funcionario entity);
     }
 }

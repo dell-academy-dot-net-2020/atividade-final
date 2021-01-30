@@ -84,10 +84,11 @@ namespace Dell.Academy.Atividade.Application.Services
 
         public async Task<ErrorViewModel> DeleteFuncionarioAsync(long id)
         {
-            if (await _funcionarioRepositorio.GetByIdAsync(id) is null)
+            var funcionario = await _funcionarioRepositorio.GetByIdAsync(id);
+            if (funcionario is null)
                 return Error(ErrorMessages.FuncionarioIdExistsError(id));
 
-            return Commit(await _funcionarioRepositorio.DeleteAsync(id));
+            return Commit(await _funcionarioRepositorio.DeleteAsync(funcionario));
         }
 
         private async Task<Funcionario> GetFuncionario(string cpf)

@@ -23,7 +23,9 @@ namespace Dell.Academy.Atividade.ApplicationTests
             ValidCpf = CpfValidator.OnlyNumbers(Faker.Person.Cpf());
         }
 
-        public Funcionario ValidFuncionario => new Funcionario("Nome Funcionario", new DateTime(2004, 12, 31), ValidCpf, Sexo.Masculino, new Endereco());
+        public Funcionario ValidFuncionario => new Funcionario("Nome Funcionario", new DateTime(2004, 12, 31), ValidCpf, Sexo.Masculino, ValidEndereco);
+
+        public Endereco ValidEndereco => new Endereco("Nome da Rua", 1, "Nome do bairro", "60540232", "Nome da Cidade", "Es", 1);
 
         public Mock<IFuncionarioRepositorio> GetFuncionarioRepositorio()
             => AutoMocker.GetMock<IFuncionarioRepositorio>();

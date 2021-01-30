@@ -30,9 +30,9 @@ namespace Dell.Academy.Atividade.Data.Repositories
 
         public async Task<bool> UpdateAsync(Funcionario entity) => await UpdateAsync<Funcionario>(entity);
 
-        public async Task<bool> DeleteAsync(long id)
+        public async Task<bool> DeleteAsync(Funcionario funcionario)
         {
-            Context.Funcionarios.Remove(new Funcionario() { Id = id });
+            Context.Funcionarios.Remove(funcionario);
             return await SaveChangesAsync();
         }
     }

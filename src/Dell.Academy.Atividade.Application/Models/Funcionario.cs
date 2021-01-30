@@ -12,7 +12,7 @@ namespace Dell.Academy.Atividade.Application.Models
         public Sexo Sexo { get; private set; }
         public Endereco Endereco { get; private set; }
 
-        public Funcionario()
+        protected Funcionario()
         {
         }
 

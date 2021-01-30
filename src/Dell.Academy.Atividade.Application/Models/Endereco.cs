@@ -13,7 +13,7 @@ namespace Dell.Academy.Atividade.Application.Models
         public long FuncionarioId { get; private set; }
         public Funcionario Funcionario { get; set; }
 
-        public Endereco()
+        protected Endereco()
         {
         }
 
