@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dell.Academy.Atividade.Appl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dell.Academy.Atividade.Data", "src\Dell.Academy.Atividade.Data\Dell.Academy.Atividade.Data.csproj", "{5D9B4342-D027-4DFC-A401-70A2A67B3792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dell.Academy.Atividade.Api", "src\Dell.Academy.Atividade.Api\Dell.Academy.Atividade.Api.csproj", "{C172DA80-FD38-4C98-8024-47F9AD537E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dell.Academy.Atividade.Api", "src\Dell.Academy.Atividade.Api\Dell.Academy.Atividade.Api.csproj", "{C172DA80-FD38-4C98-8024-47F9AD537E2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{97844CCB-7605-4E2B-8843-3465F8119AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dell.Academy.Atividade.ApplicationTests", "tests\Dell.Academy.Atividade.ApplicationTests\Dell.Academy.Atividade.ApplicationTests.csproj", "{4CA1B011-288A-4A95-8366-D20E8CF4CD3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{C172DA80-FD38-4C98-8024-47F9AD537E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C172DA80-FD38-4C98-8024-47F9AD537E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C172DA80-FD38-4C98-8024-47F9AD537E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA1B011-288A-4A95-8366-D20E8CF4CD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA1B011-288A-4A95-8366-D20E8CF4CD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA1B011-288A-4A95-8366-D20E8CF4CD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA1B011-288A-4A95-8366-D20E8CF4CD3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{EB0963B3-2BF1-4F77-AA9B-6968828DBA8A} = {C3BBCC67-179A-449D-8CCF-2B7DABCEE1A9}
 		{5D9B4342-D027-4DFC-A401-70A2A67B3792} = {2EA4D9FC-3AD8-4484-8F78-77FAEADFA765}
 		{C172DA80-FD38-4C98-8024-47F9AD537E2E} = {D35C80DF-87C8-4D7B-B220-74F86DD37BE5}
+		{4CA1B011-288A-4A95-8366-D20E8CF4CD3E} = {97844CCB-7605-4E2B-8843-3465F8119AA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D960B81-A01D-49E8-AA23-6EB203E788EB}
